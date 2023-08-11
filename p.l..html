@@ -12,65 +12,39 @@
     margin: 0;
     padding: 0;
   }
-
-  /* 顶部加载条样式 */
-  .loading-bar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 3px;
-    background-color: #4CAF50;
-    animation: loadingAnimation 2s linear infinite;
-    z-index: 9999;
-  }
-
-  @keyframes loadingAnimation {
-    0% {
-      transform: scaleX(0);
-    }
-    100% {
-      transform: scaleX(1);
-    }
-  }
-
-  /* 头部样式 */
   header {
     background-color: #333;
     color: #fff;
     text-align: center;
-    padding: 1rem 0;
+    padding: 2rem 0;
   }
-
   h1 {
     margin: 0;
-    font-size: 2rem;
+    font-size: 3rem;
   }
-
-  /* 主要内容容器样式 */
   .container {
     max-width: 800px;
     margin: 2rem auto;
-    padding: 0 1rem;
+    padding: 0 2rem;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    display: none; /* 默认隐藏 */
   }
-
   h2 {
-    margin-top: 1.5rem;
+    font-size: 2rem;
+    color: #333;
   }
-
   p {
-    line-height: 1.6;
+    line-height: 1.8;
+    color: #666;
   }
-
-  /* 底部样式 */
   footer {
     text-align: center;
     padding: 1rem 0;
     background-color: #333;
     color: #fff;
   }
-
-  /* 小花样式 */
   .flower {
     position: absolute;
     width: 20px;
@@ -79,19 +53,34 @@
     border-radius: 50%;
     pointer-events: none;
   }
+
+  /* 媒体查询 - 适应手机设备 */
+  @media (max-width: 600px) {
+    header {
+      padding: 1rem 0;
+    }
+    h1 {
+      font-size: 2rem;
+    }
+    .container {
+      padding: 1rem;
+      margin: 1rem;
+    }
+    h2 {
+      font-size: 1.5rem;
+    }
+    p {
+      line-height: 1.6;
+    }
+  }
 </style>
 </head>
 <body>
-  <!-- 顶部加载条 -->
-  <div class="loading-bar"></div>
-
-  <!-- 头部 -->
   <header>
     <h1>欢迎来到小橙子的个人网站</h1>
   </header>
-
-  <!-- 主要内容 -->
-  <div class="container">
+  <!-- 电脑版内容 -->
+  <div class="container desktop-version">
     <h2>关于我</h2>
     <p>大家好！我是小橙子，正在读七年级。我喜欢探索科学的奥秘，喜欢阅读有趣的故事，还热衷于解决问题。</p>
     
@@ -101,17 +90,32 @@
     <h2>我的成就</h2>
     <p>我在学校的数学竞赛中获得过奖项，并且在科学展览中展示了我设计的小发明。</p>
   </div>
-
-  <!-- 底部 -->
+  <!-- 手机版内容 -->
+  <div class="container mobile-version">
+    <h2>关于我</h2>
+    <p>大家好！我是小橙子，正在读七年级。我喜欢探索科学的奥秘，喜欢阅读有趣的故事，还热衷于解决问题。</p>
+    
+    <h2>我的兴趣</h2>
+    <p>我喜欢编程、数学和科学实验。在课余时间，我还喜欢画画和弹奏吉他。</p>
+    
+    <h2>我的成就</h2>
+    <p>我在学校的数学竞赛中获得过奖项，并且在科学展览中展示了我设计的小发明。</p>
+  </div>
   <footer>
     <p>版权所有 © 2023 小橙子</p>
   </footer>
-
-  <!-- JavaScript 代码 -->
   <script>
     window.addEventListener('load', function() {
       const loadingBar = document.querySelector('.loading-bar');
-      loadingBar.style.display = 'none'; // 页面加载完成后隐藏加载条
+      loadingBar.style.display = 'none';
+      // 根据设备选择显示对应版本的内容
+      const containerDesktop = document.querySelector('.desktop-version');
+      const containerMobile = document.querySelector('.mobile-version');
+      if (window.innerWidth > 600) {
+        containerDesktop.style.display = 'block';
+      } else {
+        containerMobile.style.display = 'block';
+      }
     });
   </script>
 </body>
