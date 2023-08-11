@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>小橙子的个人网站</title>
+<style>
+  /* 全局样式 */
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* 顶部加载条样式 */
+  .loading-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #4CAF50;
+    animation: loadingAnimation 2s linear infinite;
+    z-index: 9999;
+  }
+
+  @keyframes loadingAnimation {
+    0% {
+      transform: scaleX(0);
+    }
+    100% {
+      transform: scaleX(1);
+    }
+  }
+
+  /* 头部样式 */
+  header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+  }
+
+  h1 {
+    margin: 0;
+    font-size: 2rem;
+  }
+
+  /* 主要内容容器样式 */
+  .container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
+
+  h2 {
+    margin-top: 1.5rem;
+  }
+
+  p {
+    line-height: 1.6;
+  }
+
+  /* 底部样式 */
+  footer {
+    text-align: center;
+    padding: 1rem 0;
+    background-color: #333;
+    color: #fff;
+  }
+
+  /* 小花样式 */
+  .flower {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #ff69b4;
+    border-radius: 50%;
+    pointer-events: none;
+  }
+</style>
+</head>
+<body>
+  <!-- 顶部加载条 -->
+  <div class="loading-bar"></div>
+
+  <!-- 头部 -->
+  <header>
+    <h1>欢迎来到小橙子的个人网站</h1>
+  </header>
+
+  <!-- 主要内容 -->
+  <div class="container">
+    <h2>关于我</h2>
+    <p>大家好！我是小橙子，正在读七年级。我喜欢探索科学的奥秘，喜欢阅读有趣的故事，还热衷于解决问题。</p>
+    
+    <h2>我的兴趣</h2>
+    <p>我喜欢编程、数学和科学实验。在课余时间，我还喜欢画画和弹奏吉他。</p>
+    
+    <h2>我的成就</h2>
+    <p>我在学校的数学竞赛中获得过奖项，并且在科学展览中展示了我设计的小发明。</p>
+  </div>
+
+  <!-- 底部 -->
+  <footer>
+    <p>版权所有 © 2023 小橙子</p>
+  </footer>
+
+  <!-- JavaScript 代码 -->
+  <script>
+    window.addEventListener('load', function() {
+      const loadingBar = document.querySelector('.loading-bar');
+      loadingBar.style.display = 'none'; // 页面加载完成后隐藏加载条
+    });
+  </script>
+</body>
+</html>
