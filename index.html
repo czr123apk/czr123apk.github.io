@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>小橙子的个人网站</title>
+<style>
+  /* 全局样式 */
+  body {
+    font-family: "Comic Sans MS", cursive, sans-serif; /* 使用漫画字体 */
+    background-color: #ffe6ff; /* 粉色背景 */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+  }
+  header {
+    background-color: #6600cc; /* 紫色背景 */
+    color: #fff;
+    text-align: center;
+    padding: 2rem 0;
+  }
+  h1 {
+    margin: 0;
+    font-size: 2.5rem; /* 调整字体大小 */
+  }
+  .container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+  }
+  h2 {
+    font-size: 2rem; /* 调整字体大小 */
+    color: #6600cc; /* 紫色标题 */
+  }
+  p {
+    line-height: 1.6;
+    color: #333; /* 正文颜色 */
+  }
+  /* 点击产生水花效果 */
+  .container::after {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: rgba(255, 105, 180, 0.5);
+    border-radius: 50%;
+    opacity: 0;
+    transform: scale(0);
+    animation: ripple 0.6s ease-out;
+  }
+  @keyframes ripple {
+    to {
+      transform: scale(4);
+      opacity: 0;
+    }
+  }
+  /* 从顶部落下小花效果 */
+  .flower {
+    width: 20px;
+    height: 20px;
+    background-color: #ff69b4;
+    border-radius: 50%;
+    position: absolute;
+    animation: fall 4s ease-in infinite, spin 2s linear infinite;
+    transform-origin: center bottom;
+  }
+  @keyframes fall {
+    0% {
+      transform: translateY(-100px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(100vh);
+      opacity: 1;
+    }
+  }
+  @keyframes spin {
+    0% {
+      transform: rotate(0);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+</style>
+</head>
+<body>
+  <header>
+    <h1>欢迎来到小橙子的个人网站</h1>
+  </header>
+  <div class="container">
+    <h2>关于我</h2>
+    <p>大家好！我是小橙子，正在读七年级。我喜欢探索科学的奥秘，喜欢阅读有趣的故事，还热衷于解决问题。</p>
+    
+    <h2>我的兴趣</h2>
+    <p>我喜欢编程、数学和科学实验。在课余时间，我还喜欢画画和弹奏吉他。</p>
+    
+    <h2>我的成就</h2>
+    <p>我在学校的数学竞赛中获得过奖项，并且在科学展览中展示了我设计的小发明。</p>
+  </div>
+</body>
+</html>
